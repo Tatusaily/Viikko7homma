@@ -6,7 +6,7 @@
 
     <groupId>org.example</groupId>
     <artifactId>TimeCalculator</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version> 1 </version>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
@@ -23,6 +23,7 @@
     </dependencies>
 
     <build>
+        <finalName>TimeCalculator</finalName>
         <plugins>
             <!-- JaCoCo plugin for code coverage -->
             <plugin>
@@ -43,6 +44,19 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <!-- JAR Plugin for configuring the manifest file -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.4.1</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>TimeCalculator</mainClass> <!-- Correct main class -->
+                        </manifest>
+                    </archive>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
