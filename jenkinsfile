@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKERHUB_CREDENTIALS_ID = 'docker_cred'
-        DOCKERHUB_REPO = 'tatusai/devopschain'
+        DOCKERHUB_REPO = 'tatusaily/week7job'
         DOCKER_IMAGE_TAG = 'ver2'
     }
 
