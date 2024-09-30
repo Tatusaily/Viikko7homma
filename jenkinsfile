@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKERHUB_CREDENTIALS_ID = 'dockerhub-credentials'
+        DOCKERHUB_CREDENTIALS_ID = 'docker_cred'
         DOCKERHUB_REPO = 'tatusai/devopschain'
         DOCKER_IMAGE_TAG = 'ver2'
     }
@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/ADirin/devopschain_f2024.git'
+                git 'https://github.com/Tatusaily/Viikko7homma.git'
             }
         }
         stage('Run Tests') {
