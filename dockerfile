@@ -1,21 +1,18 @@
-
-# Use an official Maven image as a parent image
+# Use Maven image to build the application
 FROM maven:latest
 
-# Set metadata information
-LABEL authors="tatusail"
-
-# Set the working directory in the container
+# Set working directory inside the container
 WORKDIR /app
 
-# Copy the pom.xml file to the container
+# Copy the pom.xml to download dependencies first (caching optimization)
 COPY pom.xml /app/
 
 # Copy the entire project to the container
 COPY . /app/
 
-# Package your application
+# Package the application using Maven
 RUN mvn package
 
-# Run the main class (assuming your application has a main class)
-CMD ["java", "-jar", "target/TimeCalculator.jar"]
+# Run the main class from the built JAR
+CMD ["java", "-jar", "target/Test.jar"]
+
